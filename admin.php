@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,14 +14,14 @@
 		<form action="verifyAdmin.php" method="POST" autocomplete=false>
 			<label>Administrator ID : </label><input type="text" name="user" placeholder="Enter username..." id="user" autofocus required/>
 			<?php
-				if(isset($_SERVER['error']) && $_SERVER['error']=="userError"){
+				if(isset($_SESSION['admin']['error']) && $_SESSION['admin']['error']=="userError"){
 					echo "Incorrect Username";
 				}
 			?>
 			<br>
 			<label>Password : </label><input type="password" name="pass" placeholder="Enter password..." id="pass" required/>
 			<?php
-				if(isset($_SERVER['error']) && $_SERVER['error']=="passError"){
+				if(isset($_SESSION['admin']['error']) && $_SESSION['admin']['error']=="passError"){
 					echo "Incorrect Password";
 				}
 			?>

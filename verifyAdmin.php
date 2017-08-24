@@ -1,3 +1,7 @@
+<?php
+	session_start();	
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,17 +17,20 @@
 			$connection = new mysqli("localhost","root","tushar1997","HOSPMGMNT") or die("Verification unsuccessful");
 			$result = $connection->query("SELECT Password FROM `ADMIN` WHERE Username='$user'");
 			if(!$result){
-				echo "Couldn't fetch login details from database ".$connection->error();	
+				$_SESSION['admin']['error'] = "userError";
+				echo "Couldn't fetch login details from database ".$connection->error();
+				header('Location: admin.php');	
 			}
 			else {
 				$row = $result->fetch_array();
 				if($pass != $row[0] || !isset($user) || !isset($pass)){
-					header("Location: admin.html");
+					$_SESSION['admin']['error'] = "passError";
+					header("Location: admin.php");
 				}
 				else if($pass == $row[0]){
 					$result = $connection->query("UPDATE `ADMIN` SET LoggedIn='T' WHERE Username='$user'");
 					if(!$result){
-						header("Location: admin.html");
+						header("Location: admin.php");
 					}
 					else {
 						header("Location: adminHome.html");
@@ -32,12 +39,5 @@
 			}
 			$connection->close();
 		?>
-		<a href="login.php"><input type="button" id="signout" value="Sign out" /></a>
-		<script type="text/javascript">
-			/*var b = document.getElementById("signout");
-			b.onclick = function() {
-				
-			};*/
-		</script>
 	</body>
 </html>
