@@ -11,18 +11,28 @@
 		<link href="" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
-		<form action="verifyAdmin.php" method="POST" autocomplete=false>
-			<label>Administrator ID : </label><input type="text" name="user" placeholder="Enter username..." id="user" autofocus required/>
+		<?php
+			if($_SESSION['loggedIn']){
+				echo "<span color='red'>User has already logged in from another device</span>";
+			}
+			$_SESSION['loggedIn'] = false;
+		?>
+		<form action="verifyAdmin.php" method="POST" autocomplete=no>
+			<label>Administrator ID : </label>
+			<input type="text" name="user" placeholder="Enter Username..." id="user" autofocus required></input>
 			<?php
-				if(isset($_SESSION['admin']['error']) && $_SESSION['admin']['error']=="userError"){
+				if($_SESSION['admin']['error']=="userError"){
 					echo "Incorrect Username";
+					$_SESSION['admin']['error'] = "";
+					$_SESSION['user'] = "";
 				}
 			?>
 			<br>
 			<label>Password : </label><input type="password" name="pass" placeholder="Enter password..." id="pass" required/>
 			<?php
-				if(isset($_SESSION['admin']['error']) && $_SESSION['admin']['error']=="passError"){
+				if($_SESSION['admin']['error']=="passError"){
 					echo "Incorrect Password";
+					$_SESSION['admin']['error'] = "";
 				}
 			?>
 			<br>

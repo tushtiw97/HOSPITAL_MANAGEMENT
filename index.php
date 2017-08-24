@@ -3,6 +3,8 @@
 	$_SESSION['admin']['error'] = '';
 	$_SESSION['doctor']['error'] = '';
 	$_SESSION['patient']['error'] = '';
+	$_SESSION['user'] = '';
+	$_SESSION['loggedIn'] = false;
 ?>
 <!DOCTYPE html>
 <html>

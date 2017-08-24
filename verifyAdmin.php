@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Verified Hospital Administrator</title>
+		<title>Verifying Hospital Administrator</title>
 		<meta charset="UTF-8" lang="en" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<link href="" type="text/css" rel="stylesheet" />
@@ -22,19 +22,23 @@
 				header('Location: admin.php');	
 			}
 			else {
-				$row = $result->fetch_array();
-				if($pass != $row[0] || !isset($user) || !isset($pass)){
-					$_SESSION['admin']['error'] = "passError";
-					header("Location: admin.php");
+				$row = $result->fetch_assoc();
+				if(strcmp((string)$row['LoggedIn'],'T') == 0){
+					$_SESSION['loggedIn'] = true;
+					header('Location: admin.php');
 				}
-				else if($pass == $row[0]){
+				else if(strcmp((string)$pass,(string)$row['Password']) == 0){
 					$result = $connection->query("UPDATE `ADMIN` SET LoggedIn='T' WHERE Username='$user'");
 					if(!$result){
 						header("Location: admin.php");
 					}
 					else {
-						header("Location: adminHome.html");
+						header("Location: adminHome.php");
 					}
+				}
+				else if(strcmp((string)$pass,(string)$row['Password']) != 0){
+					$_SESSION['admin']['error'] = "passError";
+					header("Location: admin.php");
 				}
 			}
 			$connection->close();
