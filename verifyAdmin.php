@@ -15,7 +15,7 @@
 			$user = $_POST['user'];
 			$pass = $_POST['pass'];
 			$connection = new mysqli("localhost","root","tushar1997","HOSPMGMNT") or die("Verification unsuccessful");
-			$result = $connection->query("SELECT Password FROM `ADMIN` WHERE Username='$user'");
+			$result = $connection->query("SELECT * FROM `ADMIN` WHERE Username='$user'");
 			if(!$result){
 				$_SESSION['admin']['error'] = "userError";
 				echo "Couldn't fetch login details from database ".$connection->error();
