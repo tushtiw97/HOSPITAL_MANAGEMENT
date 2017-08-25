@@ -13,7 +13,7 @@
 	<body>
 		<?php
 			if($_SESSION['loggedIn']){
-				echo "<span color='red'>User has already logged in from another device</span>";
+				echo "<span style='color:red'>User has already logged in from another device</span>";
 			}
 			$_SESSION['loggedIn'] = false;
 		?>
@@ -31,7 +31,7 @@
 			<label>Password : </label><input type="password" name="pass" placeholder="Enter password..." id="pass" required/>
 			<?php
 				if($_SESSION['admin']['error']=="passError"){
-					echo "Incorrect Password";
+					echo "<span style='color:red'>Incorrect Password</span>";
 					$_SESSION['admin']['error'] = "";
 				}
 			?>

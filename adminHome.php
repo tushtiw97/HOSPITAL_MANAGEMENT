@@ -9,6 +9,8 @@
 	<body>
 		Admin Home Page
 		<br>
+		<form action="patientReg.php" method="POST"><input type="submit" value="Register New Patient" /></form>
+		<br>
 		<form action="logoutAdmin.php" method="POST"><input type="submit" value="Log Out" /></form>
 	</body>
 </html>

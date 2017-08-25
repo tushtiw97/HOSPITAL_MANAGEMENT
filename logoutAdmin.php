@@ -5,7 +5,7 @@
 		echo "Couldn't log out";
 	}
 	else {
-		header("Location: login.html");
+		header("Location: login.php");
 	}
 	$connection->close();
 ?>
