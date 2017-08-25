@@ -26,12 +26,24 @@
 			<input type="number" name="age" placeholder="Age" required />
 			<br>
 			<label>Sex<span style="color:red">*</span> : </label>
-			<input type="radio" name="sex" value="male" >Male</input>
-			<input type="radio" name="sex" value="felame" >Female</input>
-			<input type="radio" name="sex" value="unknown" >Prefer not to disclose</input>
+			<input type="radio" name="sex" value="male" required>Male</input>
+			<input type="radio" name="sex" value="felame" required>Female</input>
+			<input type="radio" name="sex" value="unknown" required>Prefer not to disclose</input>
+			<?php
+				if(!$_SESSION['sexSet']){
+					echo "<span style='color:red'>Please specify patient's sex</span>";
+					$_SESSION['sexSet'] = false;
+				}
+			?>
 			<br>
 			<label>Allergies (if any) : </label>
 			<textarea name="allergies" ></textarea>
+			<br>
+			<label>Blood Group<span style="color:red">*</span> : </label>
+			<input type="text" name="bloodGroup" placeholder="Blood Group" required/>
+			<br>
+			<label>Address<span style="color:red">*</span> : </label>
+			<textarea name="address" required ></textarea>
 			<br>
 			<label>Nationality<span style="color:red">*</span> : </label>
 			<select required>
@@ -42,10 +54,17 @@
 				<option value="sIndian" name="nationality">South Indian</option>
 				<option value="eIndian" name="nationality">East Indian</option>
 			</select>
+			<?php
+				if(!$_SESSION['nationalitySet']){
+					echo "<span style='color:red'>Please select nationality</span>";
+					//$_SESSION['nationalitySet'] = true;
+					$_SESSION['nationalitySet'] = true;
+				}
+			?>
 			<br>
 			<label>Religion<span style="color:red">*</span> : </label>
 			<select required>
-				<option value="noSelection" name="religion">Select Nationality</option>
+				<option value="noSelection" name="religion">Select Religion</option>
 				<option value="hinduism" name="religion">Hinduism</option>
 				<option value="islam" name="religion">Islam</option>
 				<option value="jainism" name="religion">Jainism</option>
@@ -54,6 +73,12 @@
 				<option value="christianity" name="religion">Christianity</option>
 				<option value="satanism" name="religion">Satanism</option>
 			</select>
+			<?php
+				if(!$_SESSION['religionSet']){
+					echo "<span style='color:red'>Please select religion</span>";
+					$_SESSION['religionSet'] = true;
+				}
+			?>
 			<br>
 			<label>Email ID (if exists) : </label>
 			<input type="email" name="email" placeholder="Email ID"></input>

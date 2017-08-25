@@ -5,6 +5,7 @@
 		echo "Couldn't log out";
 	}
 	else {
+		session_destroy();
 		header("Location: login.php");
 	}
 	$connection->close();

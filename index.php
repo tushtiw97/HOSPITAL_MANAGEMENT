@@ -5,6 +5,9 @@
 	$_SESSION['patient']['error'] = '';
 	$_SESSION['user'] = '';
 	$_SESSION['loggedIn'] = false;
+	$_SESSION['sexSet'] = true;
+	$_SESSION['nationalitySet'] = true;
+	$_SESSION['religionSet'] = true;
 ?>
 <!DOCTYPE html>
 <html>
