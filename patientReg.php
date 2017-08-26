@@ -46,32 +46,31 @@
 			<textarea name="address" required ></textarea>
 			<br>
 			<label>Nationality<span style="color:red">*</span> : </label>
-			<select required>
-				<option value="noSelection" name="nationality">Select Nationality</option>
-				<option value="indian" name="nationality">Indian</option>
-				<option value="american" name="nationality">American</option>
-				<option value="nIndian" name="nationality">North Indian</option>
-				<option value="sIndian" name="nationality">South Indian</option>
-				<option value="eIndian" name="nationality">East Indian</option>
+			<select name="nationality">
+				<option value="noSelection">Select Nationality</option>
+				<option value="indian">Indian</option>
+				<option value="american">American</option>
+				<option value="nIndian">North Indian</option>
+				<option value="sIndian">South Indian</option>
+				<option value="eIndian">East Indian</option>
 			</select>
 			<?php
 				if(!$_SESSION['nationalitySet']){
 					echo "<span style='color:red'>Please select nationality</span>";
-					//$_SESSION['nationalitySet'] = true;
 					$_SESSION['nationalitySet'] = true;
 				}
 			?>
 			<br>
 			<label>Religion<span style="color:red">*</span> : </label>
-			<select required>
-				<option value="noSelection" name="religion">Select Religion</option>
-				<option value="hinduism" name="religion">Hinduism</option>
-				<option value="islam" name="religion">Islam</option>
-				<option value="jainism" name="religion">Jainism</option>
-				<option value="buddhism" name="religion">Buddhism</option>
-				<option value="sikhism" name="religion">Sikhism</option>
-				<option value="christianity" name="religion">Christianity</option>
-				<option value="satanism" name="religion">Satanism</option>
+			<select name="religion">
+				<option value="noSelection">Select Religion</option>
+				<option value="hinduism">Hinduism</option>
+				<option value="islam">Islam</option>
+				<option value="jainism">Jainism</option>
+				<option value="buddhism">Buddhism</option>
+				<option value="sikhism">Sikhism</option>
+				<option value="christianity">Christianity</option>
+				<option value="satanism">Satanism</option>
 			</select>
 			<?php
 				if(!$_SESSION['religionSet']){
