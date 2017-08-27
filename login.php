@@ -13,6 +13,6 @@
 		<a href="admin.php"><input type="button" value="Hospital Administrator" id="" class="" /></a>
 		<a href="doctor.php"><input type="button" value="Doctor" id="" class="" /></a>
 		<a href="patient.php"><input type="button" value="Patient" id="" class="" /></a>
-		<a href="newDoc.php"><input type="button" value="New Doctor Registration" id="" class="" /></a>
+		<a href="doctorSignUp.php"><input type="button" value="New Doctor Registration" id="" class="" /></a>
 	</body>
 </html>

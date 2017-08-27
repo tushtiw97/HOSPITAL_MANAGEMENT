@@ -24,7 +24,6 @@
 				if($_SESSION['admin']['error']=="userError"){
 					echo "Incorrect Username";
 					$_SESSION['admin']['error'] = "";
-					$_SESSION['user'] = "";
 				}
 			?>
 			<br>
