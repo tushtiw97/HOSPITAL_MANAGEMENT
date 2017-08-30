@@ -8,9 +8,14 @@
 	</head>
 	<body>
 		Admin Home Page
+		<?php
+			$user = $_GET['user'];
+		?>
 		<br>
 		<form action="patientReg.php" method="POST"><input type="submit" value="Register New Patient" /></form>
 		<br>
-		<form action="logoutAdmin.php" method="POST"><input type="submit" value="Log Out" /></form>
+		<a href="viewPendingRequests.php?user=<?php echo $user; ?>"><button>View Authentication Requests</button></a>
+		<br><br><br>
+		<form action="logoutAdmin.php?user=<?php echo $user; ?>" method="POST"><input type="submit" value="Log Out" /></form>
 	</body>
 </html>

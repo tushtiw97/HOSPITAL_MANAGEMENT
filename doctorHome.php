@@ -12,7 +12,10 @@
 	</head>
 	<body>
 		Welcome, Doctor!
+		<?php
+			$user = $_GET['user'];
+		?>
 		<br><br>
-		<form action="doctorLogout.php" method="POST"><input type="submit" value="Log Out" /></form>
+		<form action="doctorLogout.php?user=<?php echo $user; ?>" method="POST"><input type="submit" value="Log Out" /></form>
 	</body>
 </html>

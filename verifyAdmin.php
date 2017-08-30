@@ -33,7 +33,7 @@
 						header("Location: admin.php");
 					}
 					else {
-						header("Location: adminHome.php");
+						header("Location: adminHome.php?user=$user");
 					}
 				}
 				else if(strcmp((string)$pass,(string)$row['Password']) != 0){

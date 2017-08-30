@@ -8,6 +8,8 @@
 	$_SESSION['sexSet'] = true;
 	$_SESSION['nationalitySet'] = true;
 	$_SESSION['religionSet'] = true;
+	$_SESSION['currentAdmin'] = "";
+	$_SESSION['currentDoctor'] = "";
 ?>
 <!DOCTYPE html>
 <html>

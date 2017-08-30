@@ -8,6 +8,7 @@
 		Please Wait..
 		<?php
 			$user = $_POST['user'];
+			$_SESSION['currentUser'] = $user;
 			$pass = $_POST['pass'];
 			
 			$connection = new mysqli("localhost","root","tushar1997","HOSPMGMNT") or die("Connection to database unsuccessful");
@@ -27,7 +28,7 @@
 					}
 					else {
 						$result = $connection->query("UPDATE TEST_DOCTOR_LOGIN SET LoggedIn='T' WHERE Username='$user'");
-						header("Location: doctorHome.php");
+						header("Location: doctorHome.php?user=$user");
 					}
 				}
 				else {
