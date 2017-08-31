@@ -12,6 +12,7 @@
 	</head>
 	<body>
 		<?php
+			$authUser = $_GET['authUser'];
 			$user = $_GET['user'];
 			$connection = new mysqli("localhost","root","tushar1997","HOSPMGMNT");
 			if(!$connection){
@@ -19,7 +20,7 @@
 				$connection->close();
 			}
 			else {
-				$result = $connection->query("UPDATE TEST_DOCTOR_LOGIN SET Authenticated='T' WHERE Username='$user'");
+				$result = $connection->query("UPDATE TEST_DOCTOR_LOGIN SET Authenticated='T' WHERE Username='$authUser'");
 				if(!$result){
 					echo "Couldn't Authenticate";
 					$connection->close();
@@ -28,7 +29,7 @@
 					echo "Authentication Successful<br>";
 					$connection->close();
 				}
-				echo "<a href='viewPendingRequests.php'><button>Back</button></a>";
+				echo "<a href='viewPendingRequests.php?user=$user'><button>Back</button></a>";
 			}
 		?>
 	</body>

@@ -31,7 +31,7 @@
 					echo "<tr><th>Doctor ID</th><th>Username</th><th> </th></tr>";
 					while($row = $result->fetch_assoc()){
 						$user = $row['Username'];
-						echo "<tr><td>".$row['ID']."</td><td>".$row['Username']."</td><td><a href='doctorAuthenticationPending.php?user=$user'><button>Authenticate</button></a></td></tr>";
+						echo "<tr><td>".$row['ID']."</td><td>".$row['Username']."</td><td><a href='doctorAuthenticationPending.php?authUser=$user&user=$username'><button>Authenticate</button></a></td></tr>";
 					}
 					echo "</table>";
 				}
