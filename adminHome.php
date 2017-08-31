@@ -12,7 +12,7 @@
 			$user = $_GET['user'];
 		?>
 		<br>
-		<form action="patientReg.php" method="POST"><input type="submit" value="Register New Patient" /></form>
+		<form action="patientReg.php?user=<?php echo $user; ?>" method="POST"><input type="submit" value="Register New Patient" /></form>
 		<br>
 		<a href="viewPendingRequests.php?user=<?php echo $user; ?>"><button>View Authentication Requests</button></a>
 		<br><br><br>

@@ -10,9 +10,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	</head>
 	<body>
+		<?php $user = $_GET['user']; ?>
 		<h1>Required Fields (<span style="color:red">*</span>)</h1><br>
 		<h4>Enter patient details :-</h4>
-		<form action="verifyAndAddPatient.php" method="POST">
+		<form action="verifyAndAddPatient.php?user=<?php echo $user; ?>" method="POST">
 			<label>First Name<span style="color:red">*</span> : </label>
 			<input type="text" name="fname" placeholder="First Name" autofocus required />
 			<br>
