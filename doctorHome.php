@@ -16,6 +16,8 @@
 			$user = $_GET['user'];
 		?>
 		<br><br>
+		<form action="doctorUpdateProfile.php?user=<?php echo $user; ?>" method="POST"><input type="submit" value="Update Profile" /></form>
+		<br><br>
 		<form action="doctorLogout.php?user=<?php echo $user; ?>" method="POST"><input type="submit" value="Log Out" /></form>
 	</body>
 </html>

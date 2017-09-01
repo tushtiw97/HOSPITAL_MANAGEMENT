@@ -69,7 +69,7 @@
 								}
 								else {
 									$connection->close();
-									echo "You have successfully registered as a new doctor. Please await Administrator's authentication<br>";
+									echo "You have successfully registered as a new doctor. Please await Administrator's authentication.<br>";
 									echo "<a href='login.php'><button>Continue to Login page</button></a>";
 								}
 							}
