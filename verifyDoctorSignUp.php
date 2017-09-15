@@ -39,6 +39,7 @@
 					if(!$result){
 						echo "Couldn't insert doctor credentials";
 						$connection->close();
+						
 					}
 					else {
 						$connection->close();
@@ -57,8 +58,15 @@
 							else {
 								while($row = $result->fetch_assoc()){
 									if($row['Username'] == $user){
-										$connection->close();
-										header("Location: doctorSignUp.php?existingUser=t");
+										$result = $connection->query("DELETE FROM TEST_DOCTOR WHERE ID=$id");
+										if(!$result){
+											echo "Random error";
+											$connection->close();
+										}
+										else {
+											$connection->close();
+											header("Location: doctorSignUp.php?existingUser=t");
+										}
 									}
 								}
 								$result = $connection->query("INSERT INTO TEST_DOCTOR_LOGIN VALUES ($id,'$user','$pass','F','F')");
