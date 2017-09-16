@@ -8,8 +8,8 @@
 	$_SESSION['sexSet'] = true;
 	$_SESSION['nationalitySet'] = true;
 	$_SESSION['religionSet'] = true;
-	$_SESSION['currentAdmin'] = "";
-	$_SESSION['currentDoctor'] = "";
+	$_SESSION['currentAdmin'] = 0;
+	$_SESSION['currentDoctor'] = 0;
 ?>
 <!DOCTYPE html>
 <html>

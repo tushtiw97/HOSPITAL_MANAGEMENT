@@ -33,6 +33,7 @@
 						header("Location: admin.php");
 					}
 					else {
+						$_SESSION['currentAdmin'] = $user;
 						header("Location: adminHome.php?user=$user");
 					}
 				}
